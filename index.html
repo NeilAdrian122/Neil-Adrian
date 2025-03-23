@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        header h1 {
+            color: #0073e6;
+        }
+        h2 {
+            color: #ff6600;
+        }
+        img {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+        }
+        section {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 60%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        #login-section {
+            display: block;
+        }
+        #profile-section {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Neil Adrian Ngujo</h1>
+    </header>
+    
+    <section id="login-section">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Enter your name">
+        <button onclick="login()">Login</button>
+    </section>
+
+    <section id="profile-section">
+        <h2>Profile</h2>
+        <img src="ProfilePicture.jpg" alt="My Profile Picture">
+        <p>Hello! I am very passionate about learning programming languages.</p>
+        <button onclick="logout()">Logout</button>
+    </section>
+    
+    <section id="interests-section" style="display: none;">
+        <h2>Interests</h2>
+        <ul style="list-style-type: none; padding: 0;">
+            <li>Fishkeeping</li>
+            <li>Programming</li>
+            <li>Gaming</li>
+        </ul>
+    </section>
+    
+    <section id="contact-section" style="display: none;">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:neiladrianngujo@gmail.com">neiladrianngujo@gmail.com</a></p>
+        <p>Phone: 099158462691</p>
+    </section>
+    
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            if (username.trim() !== "") {
+                document.getElementById('login-section').style.display = 'none';
+                document.getElementById('profile-section').style.display = 'block';
+                document.getElementById('interests-section').style.display = 'block';
+                document.getElementById('contact-section').style.display = 'block';
+            } else {
+                alert("Please enter your name.");
+            }
+        }
+
+        function logout() {
+            document.getElementById('login-section').style.display = 'block';
+            document.getElementById('profile-section').style.display = 'none';
+            document.getElementById('interests-section').style.display = 'none';
+            document.getElementById('contact-section').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
